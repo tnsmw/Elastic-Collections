@@ -1,14 +1,13 @@
 /* globals require */
 console.log("Hello, Airtable");
 
+
 // load the airtable library, call it "Airtable"
 var Airtable = require("airtable");
 console.log(Airtable);
 
-// use the airtable librar to get a variable that represents one of our bases
-var base = new Airtable({ apiKey: "keyDLatrGr9ultBwX" }).base(
-  "appHzBt6PuzBf0hlX"
-);
+var base = new Airtable({apiKey: 'keyDLatrGr9ultBwX'}).base('appHzBt6PuzBf0hlX');
+
 
 //get the table from the base, select ALL the records, and specify the functions that will receive the data
 base("restaurants").select({}).eachPage(gotRestaurants, gotAllRestaurants);
