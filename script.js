@@ -53,6 +53,10 @@ function showRestaurants() {
   console.log("showRestaurants()");
   restaurants.forEach((restaurant) => {
 
+         var restaurantContainer = document.createElement("div");
+         restaurantContainer.classList.add("restaurant-container");
+         document.querySelector(".container").append(restaurantContainer);
+         
          var restaurantImg = document.createElement("img");
          restaurantImg.src = restaurant.fields.Image[0].url;
          document.body.append (restaurantImg);
