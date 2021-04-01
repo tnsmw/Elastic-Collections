@@ -43,7 +43,7 @@ function gotAllRestaurants(err) {
 // just loop through the restaurants and console.log them
 function consoleLogRestaurants() {
   console.log("consoleLogRestaurants()");
-  restaurants.forEach((restaurant) => {
+  restaurants.forEach(restaurant => {
     console.log("Restaurant:", restaurant);
   });
 }
@@ -51,25 +51,29 @@ function consoleLogRestaurants() {
 // loop through our airtable data, create elements
 function showRestaurants() {
   console.log("showRestaurants()");
-  restaurants.forEach((restaurant) => {
+  restaurants.forEach(restaurant => {
 
          var restaurantContainer = document.createElement("div");
          restaurantContainer.classList.add("restaurant-container");
          document.querySelector(".container").append(restaurantContainer);
-         
+
          var restaurantImg = document.createElement("img");
+         restaurantImg.classList.add("restaurant-img");
          restaurantImg.src = restaurant.fields.Image[0].url;
          document.body.append (restaurantImg);
 
          var restaurantName = document.createElement("h2");
+         restaurantName.classList.add("restaurant-name");
          restaurantName.innerText = restaurant.fields.Name;
          document.body.append (restaurantName);
 
          var restaurantDescription = document.createElement("h3");
+         restaurantDescription.classList.add("restaurant-description");
          restaurantDescription.innerText = restaurant.fields.Notes;
          document.body.append (restaurantDescription);
 
          var restaurantVisibility = document.createElement("h4");
+         restaurantVisibility.classList.add("restaurant-visibility");
          restaurantVisibility.innerText = restaurant.fields.Visibility;
          document.body.append (restaurantVisibility);
 
