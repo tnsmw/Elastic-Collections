@@ -48,12 +48,26 @@ function consoleLogRestaurants() {
   });
 }
 
-// loop through the restaurants, create an h2 for each one, and add it to the page
+// loop through our airtable data, create elements
 function showRestaurants() {
   console.log("showRestaurants()");
   restaurants.forEach((restaurant) => {
-    const h2 = document.createElement("h2");
-    h2.innerText = restaurant.fields.Image[0].thumbnails.small;
-    document.body.appendChild(h2);
-  });
+
+         var restaurantImg = document.createElement("img");
+         restaurantImg.src = restaurant.fields.Image[0].url;
+         document.body.append (restaurantImg);
+
+         var restaurantName = document.createElement("h2");
+         restaurantName.innerText = restaurant.fields.Name;
+         document.body.append (restaurantName);
+
+         var restaurantDescription = document.createElement("h3");
+         restaurantDescription.innerText = restaurant.fields.Notes;
+         document.body.append (restaurantDescription);
+
+         var restaurantVisibility = document.createElement("h4");
+         restaurantVisibility.innerText = restaurant.fields.Visibility;
+         document.body.append (restaurantVisibility);
+
+    });
 }
