@@ -49,33 +49,33 @@ function consoleLogRestaurants() {
 }
 
 // loop through our airtable data, create elements
-base("restaurants").select({
-   maxRestaurants: 200;
-   view: "All"
-}).eachPage(function page(restaurants, fetchNextPage) {
-  restaurants.forEach(function(restaurant) {
+function showRestaurants() {
+  console.log("showRestaurants()");
+  restaurants.forEach(restaurant => {
 
-      if (container) {
-         // define and create elements
-         let el = document.createElement('li');
-         let img = document.createElement('img');
-         let name = document.createElement('h2');
-         let notes = document.createElement('h3');
-         let visibility = document.createElement('h4');
-         // Set innerHTML of the elements
-         img.src = restaurant.fields.Image[0].url;
-         name.innerHTML = restaurant.fields.Name;
-         notes.innerHTML = restaurant.fields.Notes;
-         visibility.innerHTML = restaurant.fields.Visibility;
-         // append them to the list
-         container.append(el);
-         el.append(img, name, notes, visibility);
-      }
+         var restaurantContainer = document.createElement("div");
+         restaurantContainer.classList.add("restaurant-container");
+         document.querySelector(".container").append(restaurantContainer);
+
+         var restaurantImg = document.createElement("img");
+         restaurantImg.classList.add("restaurant-img");
+         restaurantImg.src = restaurant.fields.Image[0].url;
+         document.body.append (restaurantImg);
+
+         var restaurantName = document.createElement("h2");
+         restaurantName.classList.add("restaurant-name");
+         restaurantName.innerText = restaurant.fields.Name;
+         document.body.append (restaurantName);
+
+         var restaurantDescription = document.createElement("h3");
+         restaurantDescription.classList.add("restaurant-description");
+         restaurantDescription.innerText = restaurant.fields.Notes;
+         document.body.append (restaurantDescription);
+
+         var restaurantVisibility = document.createElement("h4");
+         restaurantVisibility.classList.add("restaurant-visibility");
+         restaurantVisibility.innerText = restaurant.fields.Visibility;
+         document.body.append (restaurantVisibility);
+
     });
-
-    fetchNextPage();
-
-}, function done(err) {
-    if (err) {console.error(err); return; }
-
-});
+}
