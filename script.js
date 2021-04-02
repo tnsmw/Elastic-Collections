@@ -60,22 +60,22 @@ function showRestaurants() {
          var restaurantImg = document.createElement("img");
          restaurantImg.classList.add("restaurant-img");
          restaurantImg.src = restaurant.fields.Image[0].url;
-         document.body.append (restaurantImg);
+         restaurantContainer.append(restaurantImg);
 
          var restaurantName = document.createElement("h2");
          restaurantName.classList.add("restaurant-name");
          restaurantName.innerText = restaurant.fields.Name;
-         document.body.append (restaurantName);
+         restaurantContainer.append(restaurantName);
 
          var restaurantDescription = document.createElement("h3");
          restaurantDescription.classList.add("restaurant-description");
          restaurantDescription.innerText = restaurant.fields.Notes;
-         document.body.append (restaurantDescription);
+         restaurantContainer.append(restaurantDescription);
 
          var restaurantVisibility = document.createElement("h4");
          restaurantVisibility.classList.add("restaurant-visibility");
          restaurantVisibility.innerText = restaurant.fields.Visibility;
-         document.body.append (restaurantVisibility);
+         restaurantContainer.append(restaurantVisibility);
 
     });
 }
