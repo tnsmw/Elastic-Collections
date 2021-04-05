@@ -79,3 +79,13 @@ function showRestaurants() {
 
     });
 }
+
+
+//random positioning?
+(function restaurantContainer(){
+
+    // make position sensitive to size and document's width
+    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+
+})();
