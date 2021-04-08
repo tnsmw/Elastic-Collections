@@ -81,11 +81,69 @@ function showRestaurants() {
 }
 
 
-//random positioning?
-(function restaurantContainer(){
+/*
 
-    // make position sensitive to size and document's width
-    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
-    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+function gotNumber(records, fetchNextPage) {
+  // add the records from this page to our array
+  // typesArray.push(...records);
+  records.forEach(function(number) {
+    numberArray.push({id: number.id, ...number.fields});
+  });
+  // request more pages
+  fetchNextPage();
+}
 
-})();
+function gotAllNumber(err) {
+  // checks for errors
+  try {
+    showNumber();
+  } catch (error) {
+    error.log(error);
+  }
+}
+
+function showNumber() {
+  // once we have all the types, make sure our List exists
+  if (numberList) {
+    numberArray.forEach(function(number) {
+      // create list item
+      const el = document.createElement('li');
+      // makes sure we have the type name and sets the data attribute of the li
+      el.dataset.filter = number.Name ? '';
+      el.innerHTML = number.Name ? number.Name : '';
+      numberList.append(el);
+    })
+  }
+
+  // set up filters once we've appended them to the document
+  const numberFilters = numberList.querySelectorAll('li');
+
+  numberFilters.forEach(function(numberFilter) {
+    // add click listener
+    numberFilter.addEventListener('click', function(e) {
+      e.preventDefault();
+      // removes class from all filters
+      numberFilters.forEach(function(filter) {
+        filter.classList.remove('is-active');
+      });
+      // adds class to clicked filter
+      e.target.classList.add('is-active');
+
+      // this section grabs all the pokemon cards
+      const restaurants = document.querySelectorAll('.retaurant-block');
+      // triple check we actually have cards
+      if (restaurants.length > 0) {
+        restaurants.forEach(function(block) {
+          // gets the data-filter attribute from the clicked element, and checks each pokemon to see if the card has the relevant class, if it doesn't have the class, we hide the card with .is-hidden
+          if (!block.classList.contains(e.target.dataset.filter)) {
+            block.classList.add('is-hidden');
+          } else {
+            block.classList.remove('is-hidden');
+          }
+        });
+      }
+    });
+  });
+};
+
+*/
