@@ -25,9 +25,14 @@ h2 {
 }
 
 img {
+  filter: blur(5px);
   margin-bottom: .5rem;
   height: 60vh;
   width: auto;
+}
+
+img:hover {
+  filter: none;
 }
 
 ul {
