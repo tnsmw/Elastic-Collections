@@ -35,10 +35,14 @@ img:hover {
   filter: none;
 }
 
-ul {
+span {
+  margin-left: 2rem;
+}
+
+.filter {
   font-size: 1rem;
   position: fixed;
-  margin-top: 15vh;
+  margin-top: 13vh;
 }
 
 .container {
