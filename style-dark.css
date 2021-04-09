@@ -1,6 +1,6 @@
 
 html {
-  background: #e7be00;
+  background: #04051c;
 }
 
 body {
@@ -9,16 +9,20 @@ body {
   padding: 1.5rem;
 }
 
+h2, h3, h4 {
+  color: #fff;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
 h1 {
+  color: #fff;
   font-family: 'Permanent Marker', cursive;
   font-size: 2.5rem;
   display: flex;
   position: fixed;
-}
-
-h2, h3, h4 {
-  font-size: .9rem;
-  margin: 0;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 h2 {
@@ -28,7 +32,7 @@ h2 {
 img {
   filter: blur(5px);
   margin-bottom: .5rem;
-  height: 60vh;
+  height: 50vh;
   width: auto;
 }
 
@@ -40,17 +44,20 @@ button {
   width: 90px;
   height: 100px;
   background: #df4a10;
+  border: none;
   border-radius: 50%;
   box-shadow:
-    0 0 10px 5px #fff;
+    0 0 75px 50px #ffeb00,
+    0 0 125px 100px #df4a10;
     /* in order: x offset, y offset, blur size, spread size, color */
+    /* blur size and spread size are optional (they default to 0) */
   position: fixed;
   top: 5%;
   right: 3%;
-  opacity: 80%;
 }
 
 .filter {
+  color: #fff;
   font-size: 1.05rem;
   font-weight: 600;
   position: fixed;
@@ -74,4 +81,13 @@ button {
 
 .is-active {
   font-weight: 700;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
