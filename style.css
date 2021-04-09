@@ -10,6 +10,7 @@ body {
 }
 
 h1 {
+  font-family: 'Permanent Marker', cursive;
   font-size: 2.5rem;
   display: flex;
   position: fixed;
@@ -37,6 +38,17 @@ img:hover {
 
 span {
   margin-left: 2rem;
+  font-weight: 700;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  background: #df4a10;
+  border-radius: 50%;
+  position: fixed;
+  top: 5%;
+  right: 3%;
 }
 
 .filter {
@@ -53,4 +65,12 @@ span {
 .restaurant-container {
   display: inline-block;
   margin: .5rem;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.is-active {
+  font-weight: 700;
 }

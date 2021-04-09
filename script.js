@@ -37,7 +37,11 @@ function gotAllRestaurants(err) {
 
   // call functions to log and show
   consoleLogRestaurants();
-  showRestaurants();
+      try {
+      showRestaurants();
+    } catch(err) {
+      console.error(err);
+    }
 }
 
 // just loop through the restaurants and console.log them
@@ -77,39 +81,40 @@ function showRestaurants() {
          restaurantDescription.innerText = restaurant.fields.Notes;
          restaurantContainer.append(restaurantDescription);
 
-    });
+       // get genre field from airtable
+       // loop through the array and add each genre as
+       // a class to the song container
+         var numberFilter = restaurant.fields.Number[0];
+         console.log(numberFilter);
 
+         restaurantContainer.classList.add(numberFilter);
 
-/*
-    // get genre field from airtable
-    // loop through the array and add each genre as
-    // a class to the song container
-    var numberFilter = restaurant.fields.Number;
-    numberFilter.forEach(function(Number) {
-      restaurantContainer.classList.add(Number);
-    });
-
-    // clicking on filter
-    // hide if not 5
-    var filter5 = document.querySelector(".5");
-    filter5.addEventListener("click", function() {
-      if (restaurantContainer.classList.contains("5")) {
-        restaurantContainer.classList.add('is-active');
-      } else {
-         restaurantContainer.classList.remove('is-active');
-      }       
-      // this section grabs all the pokemon cards
-         const restaurants = document.querySelectorAll('.filter');
-         // triple check we actually have cards
-         if (restaurants.length > 0) {
-            restaurants.forEach(function(Number) {
-               // gets the data-filter attribute from the clicked element, and checks each pokemon to see if the card has the relevant class, if it doesn't have the class, we hide the card with .is-hidden
-               if (!restaurantContainer.classList.remove('is-active')) {
-                  restaurantContainer.classList.add('is-hidden');
-               } else {
-                  restaurantContainer.classList.remove('is-hidden');
+       // clicking on filter
+       // hide if not 5
+          var filterFive = document.querySelector(".visibility-5");
+          filterFive.addEventListener("click", function() {
+            if (restaurantContainer.classList.contains("5")) {
+              restaurantContainer.classList.add('is-active');
+            } else {
+               restaurantContainer.classList.remove('is-active');
+            }
+            // this section grabs all the pokemon cards
+               const restaurants = document.querySelector('.filter');
+               // triple check we actually have cards
+               if (restaurants.length > 0) {
+                  restaurants.forEach(function(number) {
+                     /* gets the data-filter attribute from the clicked element, 
+                     and checks each pokemon to see if the card has the relevant class, 
+                     if it doesn't have the class, we hide the card with .is-hidden */
+                     if (restaurantContainer.classList.remove('is-active')) {
+                        restaurantContainer.classList.add('is-hidden');
+                     } else {
+                        restaurantContainer.classList.remove('is-hidden');
+                     }
+                 });
                }
-            });
-*/
+             });
+           });
 
-}
+
+};
