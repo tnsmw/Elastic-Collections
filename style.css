@@ -1,23 +1,23 @@
 
 html {
-  background: #e7be00;
+  background: #aeb9b4;
 }
 
 body {
   font-family: 'Lora', serif;
   font-size: 1rem;
-  padding: 1.5rem;
 }
 
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 2.5rem;
-  display: flex;
   position: fixed;
+  top: 2%;
+  left: 10%;
 }
 
 h2, h3, h4 {
-  font-size: .9rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -36,36 +36,40 @@ img:hover {
   filter: none;
 }
 
+
 button {
-  width: 90px;
-  height: 100px;
-  background: #df4a10;
-  border-radius: 50%;
-  box-shadow:
-    0 0 10px 5px #fff;
-    /* in order: x offset, y offset, blur size, spread size, color */
+  background: #ff5a2f;
+  height: 90px;
+  width: 75px;
+  border-radius: 15px 15px 20px 20px;
   position: fixed;
-  top: 5%;
-  right: 3%;
-  opacity: 80%;
+  top: 6%;
+  right: 10%;
+  animation: shake 3s ease-in-out infinite;
+  opacity: 75%;
 }
 
+
 .filter {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   position: fixed;
-  margin-top: 13vh;
-  margin-left: 1.5rem;
+  top: 16%;
+  left: 10%;
+}
+
+span {
+  margin-right: 1rem;
 }
 
 .container {
   display: flex;
-  margin-top: 10%;
+  margin-top: 12%;
 }
 
 .restaurant-container {
   display: inline-block;
-  margin: .5rem;
+  margin: 1rem;
 }
 
 .is-hidden {
@@ -74,4 +78,28 @@ button {
 
 .is-active {
   font-weight: 700;
+}
+
+
+/* animations */
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform : rotate(10deg) scale(1);
+  }
+  50% {
+    transform : rotate(-10deg) scale(1);
+  }
+  100% {
+    transform : rotate(10deg) scale(1);
+  }
 }

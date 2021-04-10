@@ -6,23 +6,22 @@ html {
 body {
   font-family: 'Lora', serif;
   font-size: 1rem;
-  padding: 1.5rem;
-}
-
-h2, h3, h4 {
-  color: #fff;
-  font-size: .9rem;
-  line-height: 1.5rem;
-  margin: 0;
 }
 
 h1 {
   color: #fff;
   font-family: 'Permanent Marker', cursive;
   font-size: 2.5rem;
-  display: flex;
   position: fixed;
-  animation: glow 1s ease-in-out infinite alternate;
+  top: 2%;
+  left: 10%;
+  animation: textglow 3s ease-in-out infinite alternate;
+}
+
+h2, h3, h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0;
 }
 
 h2 {
@@ -32,47 +31,49 @@ h2 {
 img {
   filter: blur(5px);
   margin-bottom: .5rem;
-  height: 50vh;
+  height: 60vh;
   width: auto;
+  animation: glow 3s ease-in-out infinite alternate;
 }
 
 img:hover {
   filter: none;
 }
 
+
 button {
-  width: 90px;
-  height: 100px;
-  background: #df4a10;
-  border: none;
-  border-radius: 50%;
-  box-shadow:
-    0 0 75px 50px #ffeb00,
-    0 0 125px 100px #df4a10;
-    /* in order: x offset, y offset, blur size, spread size, color */
-    /* blur size and spread size are optional (they default to 0) */
+  background: #ff5a2f;
+  height: 90px;
+  width: 75px;
+  border-radius: 15px 15px 20px 20px;
   position: fixed;
-  top: 5%;
-  right: 3%;
+  top: 6%;
+  right: 10%;
+  animation: shake 4s ease-in-out infinite;
 }
+
 
 .filter {
   color: #fff;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 500;
   position: fixed;
-  margin-top: 13vh;
-  margin-left: 1.5rem;
+  top: 16%;
+  left: 10%;
+}
+
+span {
+  margin-right: 1rem;
 }
 
 .container {
   display: flex;
-  margin-top: 10%;
+  margin-top: 12%;
 }
 
 .restaurant-container {
   display: inline-block;
-  margin: .5rem;
+  margin: 1rem;
 }
 
 .is-hidden {
@@ -83,11 +84,45 @@ button {
   font-weight: 700;
 }
 
-@keyframes glow {
+
+/* animations */
+
+@keyframes textglow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 
+    0 0 40px #fff122, 0 0 50px #fff122, 0 0 60px #fff122;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff3d25, 0 0 40px #ff3d25, 
+    0 0 50px #ff3d25, 0 0 60px #ff3d25, 0 0 70px #ff3d25;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 
+    0 0 8px #fff122, 0 0 10px #fff122, 0 0 12px #fff122;
+  }
+  to {
+    box-shadow: 0 0 4px #fff, 0 0 6px #ff3d25, 0 0 8px #ff3d25, 
+    0 0 10px #ff3d25, 0 0 12px #ff3d25, 0 0 14px #ff3d25;
+  }
+}
+
+@keyframes shake {
+  0% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff122, 
+    0 0 40px #fff122, 0 0 50px #fff122, 0 0 60px #fff122;
+    transform : rotate(10deg) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #ff3d25, 0 0 40px #ff3d25, 
+    0 0 50px #ff3d25, 0 0 60px #ff3d25, 0 0 70px #ff3d25;
+    transform : rotate(-10deg) scale(1);
+  }
+  100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff122, 
+    0 0 40px #fff122, 0 0 50px #fff122, 0 0 60px #fff122;
+    transform : rotate(10deg) scale(1);
   }
 }
