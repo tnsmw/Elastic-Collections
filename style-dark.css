@@ -10,11 +10,12 @@ body {
 
 h1 {
   color: #fff;
-  font-family: 'Permanent Marker', cursive;
+  text-transform: uppercase;
+  font-family: 'Varela Round', sans-serif;
   font-size: 2.5rem;
   position: fixed;
   top: 2%;
-  left: 10%;
+  left: 2%;
   animation: textglow 3s ease-in-out infinite alternate;
 }
 
@@ -33,7 +34,7 @@ img {
   margin-bottom: .5rem;
   height: 60vh;
   width: auto;
-  animation: glow 3s ease-in-out infinite alternate;
+  animation: glow .5s ease-in-out infinite alternate;
 }
 
 img:hover {
@@ -43,12 +44,12 @@ img:hover {
 
 button {
   background: #ff5a2f;
-  height: 90px;
-  width: 75px;
+  height: 80px;
+  width: 70px;
   border-radius: 15px 15px 20px 20px;
   position: fixed;
   top: 6%;
-  right: 10%;
+  right: 4%;
   animation: shake 4s ease-in-out infinite;
 }
 
@@ -59,7 +60,7 @@ button {
   font-weight: 500;
   position: fixed;
   top: 16%;
-  left: 10%;
+  left: 2%;
 }
 
 span {
