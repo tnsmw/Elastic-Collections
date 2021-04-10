@@ -87,7 +87,7 @@ span {
 }
 
 
-/* animations */
+/*______________________animations______________________*/
 
 @keyframes gradient {
   0% {
@@ -101,29 +101,26 @@ span {
   }
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-  }
-}
-
 @keyframes shake {
   0% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff122, 
+    0 0 40px #fff122, 0 0 50px #fff122, 0 0 60px #fff122;
     transform : rotate(10deg) scale(1);
   }
   50% {
+    box-shadow: 0 0 20px #fff, 0 0 30px #ff3d25, 0 0 40px #ff3d25, 
+    0 0 50px #ff3d25, 0 0 60px #ff3d25, 0 0 70px #ff3d25;
     transform : rotate(-10deg) scale(1);
   }
   100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff122, 
+    0 0 40px #fff122, 0 0 50px #fff122, 0 0 60px #fff122;
     transform : rotate(10deg) scale(1);
   }
 }
 
 
-/* Mobile view - iPhone X*/
+/*____________________Mobile view - iPhone X____________________*/
 
 @media only screen and (max-width: 380px) {
 
@@ -134,11 +131,14 @@ html {
 }
 
 h1 {
-  font-size: 2rem;
+  background-color: rgba(360, 100, 100, 0.8);
+  text-align: center;
+  font-size: 2.3rem;
   letter-spacing: 0;
   position: fixed;
-  top: 1%;
+  top: 0;
   left: 0;
+  padding: 2rem;
 }
 
 h2, h3, h4 {
@@ -150,22 +150,50 @@ h2 {
   font-size: 1.25rem;
 }
 
+.filter {
+  background-color: rgba(255, 240, 0, 0.8);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: fixed;
+  top: 23%;
+  left: 0;
+  padding: 1rem;
+}
+
+span {
+  margin: 1rem;
+}
+
+button {
+  height: 60px;
+  width: 50px;
+  border-radius: 15px 15px 20px 20px;
+  position: fixed;
+  top: -1rem;
+  left: 190px;
+  animation: shake 3s ease-in-out infinite;
+  opacity: 75%;
+}
+
 img {
   filter: none;
   margin-bottom: .5rem;
-  height: 90px;
-  width: 90px;
+  height: 110px;
+  width: 110px;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 0;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20rem;
 }
 
 .restaurant-container {
   display: inline-block;
-  margin: .5rem;
+  border: 5px solid #000;
+  margin: 0rem;
+  padding: 10px;
 }
 
 }
