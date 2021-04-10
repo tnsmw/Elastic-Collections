@@ -52,6 +52,9 @@ button {
   opacity: 75%;
 }
 
+button:hover {
+  cursor: pointer;
+}
 
 .filter {
   font-size: 1rem;
@@ -117,4 +120,52 @@ span {
   100% {
     transform : rotate(10deg) scale(1);
   }
+}
+
+
+/* Mobile view - iPhone X*/
+
+@media only screen and (max-width: 380px) {
+
+html {
+  animation: none;
+  background: linear-gradient(#ff584e, #ffef25, #ffef25, #ff584e);
+  background-size: 100% 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0;
+  position: fixed;
+  top: 1%;
+  left: 0;
+}
+
+h2, h3, h4 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+img {
+  filter: none;
+  margin-bottom: .5rem;
+  height: 90px;
+  width: 90px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 0;
+}
+
+.restaurant-container {
+  display: inline-block;
+  margin: 1rem;
+}
+
 }
