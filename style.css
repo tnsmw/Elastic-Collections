@@ -1,6 +1,8 @@
 
 html {
-  background: #aeb9b4;
+  animation: gradient 40s ease infinite;
+  background: radial-gradient(#e5e5e5, #ff584e, #ffef25);
+  background-size: 500% 500%;
 }
 
 body {
@@ -83,6 +85,18 @@ span {
 
 
 /* animations */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @keyframes glow {
   from {
