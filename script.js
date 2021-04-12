@@ -118,11 +118,11 @@ function showRestaurants() {
 };
 
   function onoff() {
-   var on = document.querySelector("link[href='style.css']").href = "style-dark.css";
-   if (on.href = "style-dark.css") {
-      on.href = "style.css";
-   } else {
-      on.href = "style-dark.css";
-   }
+   const stylesheet = document.getElementById('stylesheet');
+      if (stylesheet.getAttribute('href') === 'style.css') {
+         stylesheet.href = 'style-dark.css';
+      } else {
+         stylesheet.href = 'style.css';
+      }
 
 };
