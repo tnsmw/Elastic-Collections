@@ -60,6 +60,7 @@ button {
   position: fixed;
   top: 16%;
   left: 2%;
+  z-index: 5;
 }
 
 span {
