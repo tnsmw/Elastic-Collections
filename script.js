@@ -100,7 +100,7 @@ function showRestaurants() {
       filterFive.addEventListener("click", function() {
 
       restaurantContainer.forEach(function(restaurant) {
-         if (restaurantContainer.classList.contains(".filter-5")) {
+         if (restaurant.classList.contains(".filter-5")) {
             restaurantContainer.classList.add('is-active');
          } else {
             restaurantContainer.classList.remove('is-active');
@@ -112,11 +112,11 @@ function showRestaurants() {
          const restaurants = document.querySelectorAll('.filter');
          // triple check we actually have restaurants
          if (restaurants.length > 0) {
-            restaurants.forEach(function() {
+            restaurants.forEach(function(restaurant) {
                /* gets the data-filter attribute from the clicked element, 
                and checks each restaurant to see if the restaurant has the relevant class, 
                if it doesn't have the class, we hide the restaurant with .is-hidden */
-               if (restaurantContainer.classList.contains('is-active')) {
+               if (restaurantContainer.classList.remove('is-active')) {
                   restaurantContainer.classList.add('is-hidden');
                } else {
                   restaurantContainer.classList.remove('is-hidden');
