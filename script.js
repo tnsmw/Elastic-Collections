@@ -91,25 +91,24 @@ function showRestaurants() {
            
    });
 
-// add click event listener to all span elements in .filter
-   document.querySelectorAll('.filter > span').forEach((filter) => {
-     filter.addEventListener('click', () => {
-       const restaurants = document.querySelectorAll('.restaurant-container');
+/* add click event listener to the .filter container
+ * using event delegation, you can grab the individual span elements with event.target */
+document.querySelector('.filter').addEventListener('click', (event) => {
+    const restaurants = document.querySelectorAll('.restaurant-container');
  
-       restaurants.forEach((restaurant) => {
-         // save the class nane 'visibility-x' of the .restaurant-container as a variable
-         const visibilityClassName = Array.from(restaurant.classList).find((className) => className.includes('visibility'));
+    restaurants.forEach((restaurant) => {
+        // save the class name 'visibility-x' of the .restaurant-container as a variable
+        const visibilityClassName = Array.from(restaurant.classList).find((className) => className.includes('visibility'));
  
-         // remove .is-hidden if the span that was clicked on has the same 'visibility-x' class as the .restaurant-container
-         // else, if the 'visibility-x' class of .restaurant-container is different, add .is-hidden class
-         if (filter.classList.contains(visibilityClassName) || filter.classList.contains('all')) {
-           restaurant.classList.remove('is-hidden');
-         } else {
-           restaurant.classList.add('is-hidden');
-         }
-       });
-     });
-   });
+        /* remove .is-hidden if the span that was clicked on has the same 'visibility-x' class as the .restaurant-container
+         * else, if the 'visibility-x' class of .restaurant-container is different, add .is-hidden class */
+        if (event.target.classList.contains(visibilityClassName) || event.target.classList.contains('all')) {
+            restaurant.classList.remove('is-hidden');
+        } else {
+            restaurant.classList.add('is-hidden');
+        }
+    });
+});
 
 };
 
