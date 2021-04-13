@@ -129,6 +129,27 @@ span {
 }
 
 
+/*____________So elements don't overlap when in inspector view____________*/
+
+@media only screen and (max-width: 1200px) {
+
+.filter {
+  position: fixed;
+  top: 19%;
+  left: 0;
+  padding: 1rem;
+}
+
+span {
+  margin: 1rem;
+}
+
+.container {
+  margin-top: 17%;
+}
+
+}
+
 /*____________________Mobile view - iPhone X____________________*/
 
 @media only screen and (max-width: 380px) {
