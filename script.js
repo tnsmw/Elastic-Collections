@@ -116,10 +116,10 @@ function showRestaurants() {
                /* gets the data-filter attribute from the clicked element, 
                and checks each restaurant to see if the restaurant has the relevant class, 
                if it doesn't have the class, we hide the restaurant with .is-hidden */
-               if (!restaurantContainer.classList.contains('is-active')) {
-                  restaurantContainer.classList.add('is-hidden');
+               if (!restaurant.classList.contains('is-active')) {
+                  restaurant.classList.add('is-hidden');
                } else {
-                  restaurantContainer.classList.remove('is-hidden');
+                  restaurant.classList.remove('is-hidden');
                }
             });
          }; 
