@@ -223,7 +223,6 @@ img {
 }
 
 .restaurant-container {
-  display: inline-block;
   border: 5px solid #000;
   margin: 0rem;
   padding: 10px;
