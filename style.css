@@ -11,6 +11,8 @@ body {
 }
 
 h1 {
+  animation: bounceInDown;
+  animation-duration: 1s;
   font-family: 'Permanent Marker', cursive;
   font-size: 2.75rem;
   letter-spacing: .1rem;
@@ -67,7 +69,15 @@ button:hover {
 }
 
 span {
-  margin-right: 1rem;
+  font-weight: 700;
+  margin-right: 2rem;
+  text-transform: uppercase;
+}
+
+span:hover {
+  animation: flash;
+  animation-duration: 1s;
+  cursor: pointer;
 }
 
 .container {
@@ -82,10 +92,6 @@ span {
 
 .is-hidden {
   display: none;
-}
-
-.is-active {
-  font-weight: 700;
 }
 
 
