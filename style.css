@@ -194,6 +194,10 @@ span {
   margin: 1rem;
 }
 
+span:hover {
+  animation: none;
+}
+
 button {
   height: 60px;
   width: 50px;
