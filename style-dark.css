@@ -44,6 +44,8 @@ img:hover {
 
 button {
   background: #ff5a2f;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: 500;
   height: 80px;
   width: 70px;
   border-radius: 15px 15px 20px 20px;
@@ -59,14 +61,13 @@ button {
   font-weight: 500;
   position: fixed;
   top: 19%;
-  left: 3%;
+  left: 2.5%;
   z-index: 5;
 }
 
 span {
   font-weight: 700;
   margin-right: 2rem;
-  text-transform: uppercase;
 }
 
 span:hover {
@@ -201,6 +202,7 @@ span:hover {
 }
 
 button {
+  font-size: .8rem;
   height: 60px;
   width: 50px;
   border-radius: 15px 15px 20px 20px;
