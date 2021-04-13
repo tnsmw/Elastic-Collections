@@ -91,39 +91,25 @@ function showRestaurants() {
            
    });
 
-   // clicking on filter
-   // hide if visibility (the value in the Number field) is not 5
-      var filterFive = document.querySelector(".filter-5");
-      var restaurantContainer = document.querySelectorAll('.restaurant-container');
-
-      console.log(restaurantContainer);
-      filterFive.addEventListener("click", function() {
-
-      restaurantContainer.forEach(function(restaurant) {
-         if (restaurant.classList.contains(".filter-5")) {
-            restaurant.classList.add('is-active');
+// add click event listener to all span elements in .filter
+   document.querySelectorAll('.filter > span').forEach((filter) => {
+     filter.addEventListener('click', () => {
+       const restaurants = document.querySelectorAll('.restaurant-container');
+ 
+       restaurants.forEach((restaurant) => {
+         // save the class nane 'visibility-x' of the .restaurant-container as a variable
+         const visibilityClassName = Array.from(restaurant.classList).find((className) => className.includes('visibility'));
+ 
+         // remove .is-hidden if the span that was clicked on has the same 'visibility-x' class as the .restaurant-container
+         // else, if the 'visibility-x' class of .restaurant-container is different, add .is-hidden class
+         if (filter.classList.contains(visibilityClassName) || filter.classList.contains('all')) {
+           restaurant.classList.remove('is-hidden');
          } else {
-            restaurant.classList.remove('is-active');
+           restaurant.classList.add('is-hidden');
          }
-      });
-
-
-      // this section grabs all the restaurants
-         const restaurants = document.querySelectorAll('.restaurant-container');
-         // triple check we actually have restaurants
-         if (restaurants.length > 0) {
-            restaurants.forEach(function(restaurant) {
-               /* gets the data-filter attribute from the clicked element, 
-               and checks each restaurant to see if the restaurant has the relevant class, 
-               if it doesn't have the class, we hide the restaurant with .is-hidden */
-               if (!restaurant.classList.contains('is-active')) {
-                  restaurant.classList.add('is-hidden');
-               } else {
-                  restaurant.classList.remove('is-hidden');
-               }
-            });
-         }; 
-      });
+       });
+     });
+   });
 
 };
 
