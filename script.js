@@ -109,7 +109,7 @@ function showRestaurants() {
 
 
       // this section grabs all the restaurants
-         const restaurants = document.querySelectorAll('.filter');
+         const restaurants = document.querySelectorAll('.restaurant-container');
          // triple check we actually have restaurants
          if (restaurants.length > 0) {
             restaurants.forEach(function(restaurant) {
