@@ -67,8 +67,8 @@ button {
 
 span {
   font-weight: 700;
-  margin-right: 2rem;
-}
+  margin-left: 1.5rem;
+  margin-right: 1rem;}
 
 span:hover {
   animation: flash;
