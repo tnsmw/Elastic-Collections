@@ -26,7 +26,7 @@
 
     <h1>Val's Collection of Chinese Restaurant Storefronts</h1>
     
-    <button onclick="onoff()">NIGHT</button>
+    <button id="lantern" onclick="onoff()">NIGHT</button>
     
     <div class="filter">Filter By:
       <span class="all" role="button">All</span>
@@ -35,7 +35,13 @@
       <span class="visibility-3 filter-3" role="button">♥♥♥♡♡</span>
       <span class="visibility-2 filter-2" role="button">♥♥♡♡♡</span>
       <span class="visibility-1 filter-1" role="button">♥♡♡♡♡</span>
-      <span class="info" role="button">Info</span>
+    </div>
+
+    <button id="info" role="button" onclick="on()">Info.</button>
+
+    <div id="overlay" onclick="off()">
+      <div id="text">About the Restaurant Names:<br><br>
+        In China, restaurant names aren’t chosen for their quirkiness, but rather for their auspiciousness. This practice has carried over even in America, resulting in all the restaurants you see with the words Golden, Garden, Lucky, and Happy in their names. For example, "garden" in Mandarin, is yuan, which is a homophone for money.<br><br>The crystal ball, happy Buddha, and bowl overflowing with gold aren't just for decorations. They’re fengshui tactics to bring in more money, superstitions that have been transferred down through family lines over centuries. So while Chinese people may compromise their food, they definitely won’t adjust their rituals involving superstitions.</div>
     </div>
 
     <div class="container"></div>

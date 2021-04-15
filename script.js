@@ -94,8 +94,11 @@ function showRestaurants() {
 /* add click event listener to the .filter container
  * using event delegation, you can grab the individual span elements with event.target */
 document.querySelector('.filter').addEventListener('click', (event) => {
+
+// check if the element being clicked on has 'role' of 'button'
+ if (event.target.getAttribute('role') === 'button') {
     const restaurants = document.querySelectorAll('.restaurant-container');
- 
+
     restaurants.forEach((restaurant) => {
         // save the class name 'visibility-x' of the .restaurant-container as a variable
         const visibilityClassName = Array.from(restaurant.classList).find((className) => className.includes('visibility'));
@@ -108,18 +111,26 @@ document.querySelector('.filter').addEventListener('click', (event) => {
             restaurant.classList.add('is-hidden');
         }
     });
+   }
 });
 
 };
 
 
 // onoff button to toggle day or night mode
-  function onoff() {
-   const stylesheet = document.getElementById('stylesheet');
-      if (stylesheet.getAttribute('href') === 'style.css') {
-         stylesheet.href = 'style-dark.css';
-      } else {
-         stylesheet.href = 'style.css';
-      }
+function onoff() {
+  const stylesheet = document.getElementById('stylesheet');
+     if (stylesheet.getAttribute('href') === 'style.css') {
+        stylesheet.href = 'style-dark.css';
+     } else {
+        stylesheet.href = 'style.css';
+     }
+};
 
+function on() {
+  document.getElementById("overlay").style.display = "block";
+};
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
 };

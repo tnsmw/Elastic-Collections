@@ -41,8 +41,7 @@ img:hover {
   filter: none;
 }
 
-
-button {
+#lantern {
   background: #ff5a2f;
   font-family: 'Varela Round', sans-serif;
   font-weight: 500;
@@ -53,6 +52,10 @@ button {
   top: 6%;
   right: 4%;
   animation: shake 4s ease-in-out infinite;
+}
+
+#lantern:hover {
+  cursor: pointer;
 }
 
 .filter {
@@ -74,6 +77,40 @@ span:hover {
   animation: flash;
   animation-duration: 1s;
   cursor: pointer;
+}
+
+#info {
+  color: #fff;
+  background-color: #04051c;
+  border-color: rgba(255, 255, 255, 0.25);
+  border-radius: 5px 5px 5px 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  position: fixed;
+  top: 18.5%;
+  left: 50%;
+  z-index: 5;
+}
+
+#overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#text{
+  font-size: 1.5rem;
+  color: #fff;
+  transform: translate(16%,80%);
+  width: 75%;
 }
 
 .container {
@@ -201,7 +238,7 @@ span:hover {
   animation: none;
 }
 
-button {
+#lantern {
   font-size: .8rem;
   height: 60px;
   width: 50px;
@@ -218,6 +255,25 @@ img {
   margin-bottom: .5rem;
   height: 110px;
   width: 110px;
+}
+
+#info {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  position: fixed;
+  top: 23%;
+  left: 44%;
+  text-transform: uppercase;
+  z-index: 5;
+}
+
+#overlay {
+  background-color: rgba(147, 119, 112, .85);
+}
+
+#text{
+  font-size: 1.3rem;
+  transform: translate(16%,17%);
 }
 
 .container {
